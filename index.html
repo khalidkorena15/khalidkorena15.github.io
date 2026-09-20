@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAYRUlEQVR42n166Y9c15XfOefet7/ae2WTTYqLSEoitY9HTixZ3gLHmBlMlEw+BEbyJchfECBf8jcEAQIEQYAgXxIEiIPAcZDIyVgW4oljjUceUaIpUVxaXJrsrq6uvd567z358KpeV1U39dBovHrbvefes/zO7xz85//snwIAMwMAACBicVJcmb9enpdH8TAzl3dnr/PcI0fPlB8vDz46jDGGmYnEsYG4fBERAebPQRZjF18vJ1FcmZdnSbalqZSzXHqlFOBZs59bHSSi4gIRlbKVEysHnZ/kVIDjny4+MT/G/DvlK0t3y1vMxQkgEpx88Ly0iAjAAMX3F5YMsdw9Ku6Wk13YgeOzL75sjFlSlaU9mdefUoD5/VycDc6WFhEBARhMcZGIZmt8XC0LncQTV0IeHwABZyuzsBXHlWpeqmMruvAkES1rHRBDYWamFAAACqlLtZnf4GI/Z6ZCRwIsjocIxMzFQpTqeFzNlpRtbnW5HGBuv0UxF2RAYEQAZGAGPlKzQluKbxCRMaaQan535y2hWDi5aODF2sw2A3nJLkvXNL2CgIDP2oqF8WDeOeGSDczmONX4JeHnFfWYuwM5Mw4GQGCGBata3PPyymyvwACDmV2aU3pEQDya9HH/A8/yyFNlK93Occ82b2OIKIERuJgfMgOVfqM0V57uBSAvDYZIggrtFHmeW7aDiEprQSJXig0LKZHBKM1okJBhJhczG0Y6tvnLqg9CiPLKkmOYeqEF832G95h6gDktJ0QSlGa62+4yoNaq1Wrdf7CDSNqYLEur1erp01vDyQAM18IqIGhtCoPCwlJxwTGUg5ZG9YzAAks+UD7rNgDw1G6K07k3SaSp0ibr9ief37r3+9/flJa4euXK3bt30jwJgtC2nY319U8/vbm9fcayhX3OnYwnG2urbLRRyIgAGthA4elmoZaPdHVeB04ABPMbJbn0E3ykXqW9cXFj+guJhBDUH8V/9dsbn39xQ0ir2VyvNcI0jW99cRMRoygyRlerDQC6d29n98nu2e1zT590hMQkzTZWW67rZll25Hy4HAWYmZAAsBxtugNwZAxLAAcAxLvvvFO4k8J6ZhKU3gXK2KUNZLn6q4//+s8/+KXt+PvtvdFo1Gqu7refGqNrtXp/2N86c0FazmQySuPMtm1jVK/bHQ6HwHDn3lfrp84ZZkmAAFhawFIs55k64cyXPCPeLwswHymnOABmcREAUdy+s/PLD39169bn6+unut1uFE8m40mnc7i2traxcfru3btEsL5+qtc7BGOM0RsbG5WwoY3O8ziJ0/PnL9y5c+fXv/61H4RnTp/WWgESTNcYgfDIf83cBMKC9y0mVsbEwj7Ed7797enaL3qDOX1k27bv3//qF7/8sNvtNZotNrC/98RxbNcJfN/zPL8S1pIkqtdrj7564LoOIggp4iiJosiyrP29fSQYDntPdh8aY7Isq1RrrucrzUQICCiIiBBpcVvMcSw8v/bFPfHdd789CyELOPRIaMIojj/++He7T3ajeHJw0G40mo7jALDruK7rDof9bmdfoDA6F0TAAGCA0bHtOJ4QicuXr2ZJ7vuVlZU1ANTK3Lt7/8nT9sNHT+rNGqKxbAdmKAKP7HjZcBdc1ux8Di0SGuBCcYrYwMDaGECxu/t45/4913EJ0XOcdntvr/10PBoA8mDY7Q97bhhM4ogsv9ZcrdXrG+ublUotCCuEUKutCNutVKsb66fr9Wb38KBaDYOwkmdp+6D9v//8g6ftwXgcz8EmRIGMwECIAlAgCUCBSIX+lKohiBBRfPfddxc0p9Q7BCYUltzb2//glx+22x2llBCCiCbjcRBUVGaQDWRpTQqZpSHqKuSeUa1KLXCdiiOVNkKCF/jDbsdCrdLMQa42a42V9dFgpI0igUkcj6PEEnRmazPP8/kgAAAkRLnqtKjeOIPa8ni4nrkqs3/QOTw8/OzTz6JYS8eLJsNWo6W0FmRtrzadJPLQXD51/vql5xxhQknrK41HncGdg7g/GL/7+gu379z9L7952EuyRrXmCt6sijcvbL1/8/btu1+4tlfxK3e/vCkt6/yly67rpmkqpAA+GVMhIhs9n9+VwpwA5oonpJB3v7j90UcfKW08L0jTuF5vnNo+/+jhA0fHKzq9eqa5vd46tdJcbVSqoefbdsUPrl27FgFCntc8+9VzK8+fWfvpR5/WapWXr15Apeq+93rL37nzZVZpke+d3T73ZH9P2mFz7fRoPK7X60X6saT6ZficwjbmmYkwnpiRlWvQ7XbzLEOkShiQJZI0HfY6Ynx4qVm90AhbgVdxHUeSJBRAhKi0ytJIWpbibBynduB++xsvvX7tYrfd80JXG92fRD/+4Tfevn7p33342aFwLl19+fkk2nn46P90Hn/37beYeZqYHcsujDFzCjK1b0ICXExo5gGVUopnfnkSx3Ga6DRD0Xtta/1MvRpIAUyeJT0pAtfxXMtzLM+3HQuUyov4QQSZYsemlbVammTCsldcm4X98vWNH0vnX/2P3zzYuX/Y2c+NfuHKC0QSELU2s6xgIYMr05Lj0EgamNoNHWFhJKLBcHjY62pgrRVPxq7trDbqlypuy7ERgYhDR3pShoFXqfi+Y/thYPkOGvR8Fx3HABGCUQbZAOt4NIniSabSXOs0nrx4/vTFzfqHd3YNYqu5mmSRBjaMjIRgjpMAC3uCs6yN4QjMlSlFGT6UUnEcqzxHIZXS9bV6TWDdtSuWFISu7Xi27Xt2o1apBp7tVzy/wogicITjoO0RWSykBEEAwLmSe47OUbLJlQHjOGKt6rPKayvrX93/stGqXX/phal+0xwgmGnUcS6DmQv4IxdwW0ENACKgEGJjY7PX7duOjUiO43oCc5UJz3Yty7Vtz3Fcx3YsKaTl1KrSr7PSMvDR9gxJsH2yA3Jck6eoUgvJKFaTQ5sSrVmg2V5vhY7lON7lyy8Ggeu5HmIBVGEWpaaWW0D4Jf8zzVsKGygEnUNMpJnrjVatUicSCKC16rQ76+trnuMzkiWF61gGDAoC5FxpkyttDAjBTgB+g6TFZKHlgRuAk+JkIIQtPF/EQyMYQBsD21vrr7z4QmRX0iSvNdww9PNclTIATtPZQveXPBLPbRSdSLkVT9uOjVAYFqtklEYDIQWTEEI4ru26dpblSuVlTEEUnOfMzCiMyk06MeMex2OVJqAyIkJhawZlOFV54PphECo2/X7/OH1W+tOpIp1EExY/qby6lK0hYhAEJIiEJBRSAAFYJBEFIQhkKQgYjAFpS8t2LNcVnq1VjJM+GiVAUxZBNkGVS2QmZEKQlpC20pwpcFzXcZz9vf1+v+N7Phaw7hgDwgCmoDKQkAQgMRZJ7hSWyvl5z+d4xpgrV67cunVrf29fCGkhERISIWsyqLMcwXiOdB1b2pZ0XJI2+1VUinQCrm80kMgpqIKwOR0K1MjaqIx1hggAgtiYLAKlmLXneghU0lHzazpHAZVp7UJ6+DVQgj3Pc12XtbEsi5hDPwCL0LAlpbSsIAy8SmBQMllKM2pjeTXQhlUsqg0ajw0Buh5Kx4DSOhM6D0xGKkviSCUqENpV4zSe1Go13/eWVPxEQnaBbJzC3rmknhc5JGaWluU6jmENLCu2s95oEArWqbDd1tpK0Gqlrr/H7rCXreGkKiyKxpxMRKVlcm2SsTEmae9pIGIjJRLLKDauG3i1fBjtgeGLW81P9mMR1CxLstHHJ30Cv8QMQHjkY0Eep2nL3FpaMgxCgWghrNfq1SAYRRE6zmHO8dMRDlRCdgIoWL16+fzLZ7NTeWoBY9CgNMkng26n2z7s7w7Gim3Pc6uBC6x0Nt4KbYMyjaLzGxt1rxMLAkTDZj4ffBZzPHuACixEBZhbImiPzIehUq24tlX1vVrgGa1yxL1eL47GjaBSqdXcanOSRILzT8Yje3TKeX6z1VyTnKnJwaj9qP1o11heIM3uox3t+GK1tbm52e52Pt7Zq7iiFTiQKM5TDSQti3V+fB3LBGDeOMv9IUBElAA0gx96gbcCo42phEHgiFYlqPg+k5WkE5VE105tvH757NmzZ0aZurvzUCk1jpN7d3fqHoLBM6dzZp0MDkHlmsHO1aqLG6fXWtsXXZWsbbUe8vDOo31bhCbXq1XHEjYJqZSaD7jHXeJySslMKAFYfP97319mLmeMHBGNB4Nhe2+1Wq86DoOMJuPnVioXt1paWt0k135j/fmXpfAcSVkWPdnd8xHPXbxku7aORgqshw8f37h5+8HT3s9v3L7XGT5++NWwvfvcqZZry1xlBJa0LXQ8GTaATcmdzSP8JbK+OCeimVaR+MH3fwCLyf8UajMI22KE0d5+zXFdyzIqkwih63yx170/5L++++jnH92k9fPX3/hGNahk4/7NG1+sh+7VFy6SY+kk1uTu7Dy+fP0Nq9L8yfvv5+j+6d/7+7/91V9MBt1Lz52tVsNxnI1Tkxuo+q5iMIAEDLhc1ClPSj4CS6gBQEBY/JWEMxAyAAgRHx7Gw77teErniGRJ6dvycWfQj/I3L1564cxWyMnpWnD91RfUuJ/EaTQZh0FACAhsQcbR+Norb67Vgu1m+N6bb/7xKy9dccwbp1dtFFkW+7bNUjDzH2zWXsfuKiaM4jijOJ8Hn8ifyuPlLZ6yTvrR//31w89/b2oerW4gkcucqdRBDoNAPbn7eit464/efvHaObX3dLPVvDUctnx/pVkXbFgby/Ob1cQn//6X93yt//E/+gfhWkPt3Hzl0mZkgCQ7oC0wZ5veaxe3H33+WSB9zoFRMms8qZR2nAKdI3eLH0RgzAwqUdo5fPLZjY3QRmStkYkEq5VqpVWvazCW5Frob5ze0MN2fzTMuk9dHZ1bXanVqiqLKVcg7TDQDpkX3nhl0BugyXkwtlpNu+a7aazTMbB2CVbWW6JW3b586fOHkUmUEIaZ4Fhl4GRmFwABJBjmWZZZvEnMhllY0gVjKeWz00lTYDDKBDWvUbWa9XClUrGZLc5DTqQN46yro8j3qySkBiCBABKkJdB4Nd8NXM4VCQKQlI+MK7MJJHFqIVKe2QIHmicZSdJF6eyZ9ZTFw8xXKZnNUXWCCBm8Ws2q14a9nracu/0H19fWfCAEtdasbTSCVq3iWpZlO1ZAuUkm/W6esrJxMBihXaGwwWmk00SzRga0CFmBBmBQ0hZEFlGkesyaxwMY9JXtDzkGWq6qnFjMLVPkYn9KQnfK7E3zCGCyXX9re6R5rLK61gGTEdJo4oyksEkK2/dkEFqOk8VRrzuZxJnlWlGiyA2NCIAsZcAoIdyQnAZ4K8p22RJke2DbAKiSNDNm8+xZst3dzOol+XwR+1naP1+5OYLTs+dKGYCZlTarV694noVJsloNpFYaMM7VOEqSTNuu6ziB51fB9oJGszucbG+tXdg+1Vpfl0GNGqvg+3a4gpZrhj2VjblSFyun2KsZRKMyVlmulJCeFfiiXn/cT9hgAZ1PLOU/q8xRLPwykpu6W6VrZ86urqxmSbrX7Sd5DESJ4dQYg2RIgJAGLcur39npROPRe3/3R2cuXVDSUnkKh0/UJFP1uru9yUqZ9lMY9yhsYXWVhIsaGMw4zt2gRqBjZXrjWAgBBU47qY6/VKyfjwkSCU1ZWS+qb8xExJqdsO5unQoP9o2hbnt/o7aSa2WYmHEyGLnS8lc3o5z/w7/991tbm7ce7P2n//lhOhr+aO/pW29948svH9y4ceOV86f+8L0/w2oz7/XQ66LrMCDq3OR5isJ1bWHZ7f3DbpSgYOCjusSJNekTWx+IS0oUp4TWrPQBgmj1pZcpdC+dWtGToc5TDWKUmOE4iaMkTTMBHA27p1dr427v8c7DptCvXjjnooN+8613vvN33n3Xc1yIYykJHUsftnHYp3jCSTzsT2JthADS9hcHw5HOLSL42q6KJdUvn5Rz1Zvpv1ncRtZp9dyF82//IP70k5AGWTSAoP64N2pUnWpghQZHhwcwHP7Jn3xf2IGR8tKFU6KxevbqdVc4h/1hcOXqq6++aOKJ6jzWOeeKLaE4GU7Gk/44yTOzXq896Q0+2Z+4lsVAAOZ4O8cStz7vWKcqxEesPGBRSSUxY9dZG2699NpBv29G3RRRsB4l8cFgsrlWHQwHWqn+3oFWWWPDA9vfT3vDnYe19bOh5+62u2i5js0boRV6thC4//SpTkf1ijWM4wQoytNbjzt3OkNNtgWgAeGkzpiv6ZIpnKksn6IZ5cVzpUI0Jnfs2h9+88JL1xXrJ7/9WAKM4rjd6UnLedxLe71sNBpGD/rV0HclXb1yudmoR8Px1sZmZzQYHuzrIQkvyN3QClbbB7tCuWmUMVMvp99+dSgtRwrU0z4D+BqNf9YhnwXBj+CeVuAHtUotHo9cx49Hg9HYejpSu6b3F18+yqOopvOLZ083K9WtzdOpcW4/eLq5fVaz0GpMKF3bMqD+80//ezcx33rxdOCdGiYpuX5myHI8gXqaovMUHcAzWqOe1ch0xEowHtsyBAQ0bECD0dpxXBm4ep+Hk2jyNH8wHD/tjdLJ5MXNDZVBuxtlyd5zF4P2wb1+b+RXmiaK8lwfDCZ5PDzbrISJWltdizINaGtNY20RAnOBg1GDKRi2E8mV48naERr9+shn2BwlnFI6jRZZj0wWZ/3kncuXzj93/j/+7P3xaKKVOru5teaFz9UbOgkNgDTacmyn2jzIBwq81165Osx06MrDvUfkOAfjJGMhBGtT8p/IwMhYstMnzur4zsjjz821Gc1HEzBGVdbW+76fp7HW4Hv29sXtb71y7end+xu1io3cbNXDlRUhHKoEbr2uJpPx3qO1uheEYRznroBupx2nSjq0N4lzqoqFujyUPVAFYTgfhp/VckdEcokLWOpNmZMbwUDYbDitRjToK5V/fu+xu/KltEzgWBbEo/HevUdRpMdBfSXQNSvrOAjBirQEqDQhAgY1mgyNMt1J0s0QXGBTKEwBwPRRH9eMZD7uTI/bN+HisURiH2VAwABcFPlAkLDlXqdz87PbKtNeJXRs2/dtv2IJ20zSfq/3RA87rlDSQkAjJGkDSabSLI+TbHeU5XZAAEh01MnFi+rB8LXc1hHqlss2DjjXzENll0TRYoKEiCJNE9f1IFf7B52mI5DMKE/XLHF6pVmthhol+ZVmte44QnPGWimlcoOj4WCc5FmurbDKJHHW38dHbVZwVKVYlGTqoPCo14iBkQkQ5hrGDFNRSZs1TUzRHhMBEUhA0MyOE8TDQZKmrrR1mg0mkee6jnTyTOV5rtMk8Ny1rbPexmnhV9CAyXJtKFd6OJ50uoONWlALfWCaohcsSsK8wEJA2eqABZXLCEizn7NiACMiCfoaQm9RtRgRgdAKfUQcHPZinUVMTwaRRqzU6kmejyeRYfT8UDiucEMtAmM5LK0oy/dHyW43Xqm3tlYbyWRMs4SwLAAvMFZz7MOJeG7+4jFqEZ8VBRkZ2YDnOBZQnEejoZ7Y3gh5bTSRvo+cWpPxirUZG2OGPcPCkJmw7I/1vd2D33x+D+L0xz96W1Dai1U7G5zbWEmS7Ki15BkHEWmtZw1i0+RxjrGb2cB8jX4pppcmYZgRsDceMgChMSrLLDdB+dmT3pNhXPWcMdhhY2LgUHe6XtDLCT5/sDPM+N5B7/99/NmffesP6oHTPRx+73t/69/89Fed/rhR95JYIfFSk1x5LDqfsjFivt5qTnCj8zzpfEyxbXv/sPuLX3xwThIzkwGRZkM1GiIOUrW1ZqcHo0Tff7TXFq7XrPa/are/2O1ox7n3YLfu2m+/clnlyuRpxeK3vvnWv/wX//qH33utVnFzpY8zuOWVWZcoHqW7Cy3Ss6S+QHZLLeAzqRgAjNFBUP3dz9+vC2lLYG2YOcijDLjLFFvWKFfJYNIfT3b2yHJ8xwu6UTKK1c6DmwGYf/IP39tYW4tHIwEyj0bXrl3PWf6vD373nb/50ubmapKmRjMBMQODmdmwma9ezzWWznU7CRI//OHfPk7iLRoNMRvLsrrd3s9+9t9e2z4zanfyPGejUbNg8Dw3yvJJkrGwo9wM4+xx+/DBXkcBpvHI5/i9b77xx+/8DRSIxDpLuuN07eKLv/rLG4eH3Ue77TjLapXQc23DGsAU0aGcSKnuc33xVDRYLhjxcdBXdo8yA6IcjaKf/OS/tvfaa2++sX///mGauAgC0IO8plIfZSbQNTmzMQyjUd8G3lqtvnD10rXnz11YbQHnaFAIkRsCL6w1a616/allK4a//OT2rS/uf/ON69vb6wyq6Pcouk2eBUvn4c//B3uRrGi6ygXxAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="assets/favicon.png?v=3">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Khalid Korena">
+<meta property="og:title" content="Khalid Korena - Cloud Solutions Architect">
+<meta property="og:description" content="I design, build, secure, and optimize cloud architectures across AWS, Azure, and other cloud providers. Legacy modernization, automation, websites and business systems.">
+<meta property="og:url" content="https://khalidkorena15.github.io/">
+<meta property="og:image" content="https://khalidkorena15.github.io/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Khalid Korena - Cloud Solutions Architect">
+<meta name="twitter:description" content="Cloud architecture, DevOps, security and monitoring on AWS and Azure.">
+<meta name="twitter:image" content="https://khalidkorena15.github.io/assets/og.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Khalid Korena - Cloud Solutions Architect and Cloud &amp; DevOps Engineer. Cloud architecture, DevOps, security, monitoring, networking and web systems.">
+<title>Khalid Korena - Cloud Solutions Architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F3F1EC;color:#15171C;font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-decoration:none}a:hover{color:var(--ink)}
+.theme-light{--accent:#8E2A2A;--accent-text:#8E2A2A;--bg:#F3F1EC;--surface:#FFFFFF;--ink:#15171C;--body:#2A2D33;--muted:#5B5F66;--line:#D9D5CC;--line2:#E2DED5;--line3:#BDB7AB;--shot:#F7F6F2;--msurf:#ECE9E2;--inv:#15171C;--badge-bg:#F6E7E5;--badge-fg:#7A2222;--header:rgba(243,241,236,.92);--link:#8E2A2A;color-scheme:light}
+.theme-dark{--accent:#8E2A2A;--accent-text:#E59A90;--bg:#111317;--surface:#1A1D22;--ink:#ECEAE4;--body:#C9CCD1;--muted:#9A9EA6;--line:#2C3037;--line2:#2A2E35;--line3:#3F444C;--shot:#15181C;--msurf:#16191D;--inv:#2A2E35;--badge-bg:#3A2020;--badge-fg:#F2B8B0;--header:rgba(17,19,23,.88);--link:#E59A90;color-scheme:dark}
+.theme-root{background:var(--bg);color:var(--ink);transition:background-color .35s ease,color .35s ease}
+.theme-btn{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);color:var(--ink);cursor:pointer;transition:background-color .2s ease}
+.theme-btn:hover{background:var(--line2)}.theme-btn:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.theme-btn svg{transition:transform .5s cubic-bezier(.2,.8,.2,1)}.theme-btn:active svg{transform:rotate(-40deg) scale(.9)}
+#lightbox{display:none!important}#lightbox.lb-open{display:flex!important}.ic-dark{display:none}.theme-dark .ic-dark{display:inline-flex}.theme-dark .ic-light{display:none}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
+.label{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;height:32px;padding:0 12px;border:1px solid var(--line);border-radius:4px;background:var(--surface);font-size:14px;color:var(--ink)}
+.node{display:inline-flex;align-items:center;height:28px;padding:0 10px;border-radius:4px;background:var(--bg);font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12.5px;color:var(--ink)}
+.card{background:var(--surface);border:1px solid var(--line2);border-radius:8px}
+.navlink{font-size:15px;color:var(--ink)}.navlink:hover{color:var(--link)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.proj{transition:border-color .2s ease,box-shadow .2s ease}
+.proj:hover{border-color:var(--ink);box-shadow:0 18px 40px -24px rgba(21,23,28,.45)}
+.cert{all:unset;box-sizing:border-box;display:flex;flex-direction:column;cursor:pointer;padding:12px;background:var(--surface);border:1px solid var(--line2);border-radius:8px;transition:border-color .2s ease,box-shadow .2s ease}
+.cert:hover{border-color:var(--ink);box-shadow:0 18px 40px -24px rgba(21,23,28,.45)}
+.cert:focus-visible{outline:2px solid #8E2A2A;outline-offset:3px}
+.cert-img{display:block;transition:transform .45s cubic-bezier(.2,.8,.2,1);transform:perspective(900px)}
+.cert:hover .cert-img{transform:perspective(900px) rotateX(6deg) rotateY(-8deg) translateZ(18px)}
+.lb-btn{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.35);color:#F3F1EC;cursor:pointer}
+.lb-btn:hover{background:rgba(255,255,255,.12)}.lb-btn:focus-visible{outline:2px solid #FFFFFF;outline-offset:2px}
+.lb-in{animation:lbin .45s cubic-bezier(.2,.8,.2,1) both}
+@keyframes lbin{from{opacity:0;transform:perspective(1200px) rotateX(18deg) translateZ(-200px)}to{opacity:1;transform:perspective(1200px) rotateX(0) translateZ(0)}}
+@media (prefers-reduced-motion: reduce){.cert-img,.cert:hover .cert-img{transition:none;transform:none}.lb-in{animation:none}}
+@supports (animation-timeline: view()) {
+@media (prefers-reduced-motion: no-preference) {
+.d3-rise,.d3-left,.d3-right,.d3-flip,.d3-zoom,.d3-tilt,.d3-out,.d3-photo{animation-timing-function:linear;animation-fill-mode:both;animation-timeline:view();will-change:transform,opacity}
+.d3-rise{animation-name:d3rise;animation-range:entry 0% cover 35%;transform-origin:50% 100%}
+.d3-left{animation-name:d3left;animation-range:entry 0% cover 40%;transform-origin:0% 50%}
+.d3-right{animation-name:d3right;animation-range:entry 0% cover 40%;transform-origin:100% 50%}
+.d3-flip{animation-name:d3flip;animation-range:entry 20% cover 45%;transform-origin:50% 0%}
+.d3-flip.r2{animation-range:entry 30% cover 50%}.d3-flip.r3{animation-range:entry 40% cover 55%}.d3-flip.r4{animation-range:entry 50% cover 60%}
+.d3-zoom{animation-name:d3zoom;animation-range:entry 0% cover 50%}
+.d3-tilt{animation-name:d3tilt;animation-range:entry 0% cover 30%;transform-origin:50% 0%}
+.d3-out{animation-name:d3out;animation-range:exit 0% exit 100%;transform-origin:50% 100%}
+.d3-photo{animation-name:d3photo;animation-range:exit -10% exit 100%;transform-origin:0% 50%}
+@keyframes d3rise{from{opacity:0;transform:perspective(1400px) translateY(120px) translateZ(-180px) rotateX(38deg)}to{opacity:1;transform:perspective(1400px) translateY(0) translateZ(0) rotateX(0)}}
+@keyframes d3left{from{opacity:0;transform:perspective(1400px) translateX(-80px) translateZ(-220px) rotateY(32deg)}to{opacity:1;transform:perspective(1400px) translateX(0) translateZ(0) rotateY(0)}}
+@keyframes d3right{from{opacity:0;transform:perspective(1400px) translateX(80px) translateZ(-220px) rotateY(-32deg)}to{opacity:1;transform:perspective(1400px) translateX(0) translateZ(0) rotateY(0)}}
+@keyframes d3flip{from{opacity:0;transform:perspective(900px) rotateX(-92deg)}to{opacity:1;transform:perspective(900px) rotateX(0)}}
+@keyframes d3zoom{from{opacity:0;transform:perspective(1200px) translateZ(-420px) rotateX(24deg)}to{opacity:1;transform:perspective(1200px) translateZ(0) rotateX(0)}}
+@keyframes d3tilt{from{transform:perspective(2000px) rotateX(16deg) scale(.9);border-radius:32px}to{transform:perspective(2000px) rotateX(0) scale(1);border-radius:0}}
+@keyframes d3out{from{opacity:1;transform:perspective(1400px) rotateX(0) translateZ(0)}to{opacity:.15;transform:perspective(1400px) rotateX(-28deg) translateZ(-260px)}}
+@keyframes d3photo{from{transform:perspective(1400px) rotateY(0) rotateX(0) translateZ(0)}to{transform:perspective(1400px) rotateY(-30deg) rotateX(10deg) translateZ(-240px)}}
+}
+}
+.theme-root{overflow-x:clip}
+@media (max-width: 900px){
+.theme-root [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}
+.theme-root [style*="repeat(6, minmax(0, 1fr))"]{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.theme-root [style*="repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink)"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.theme-root [style*="grid-column: span"]{grid-column:auto!important}
+.theme-root [style*="max-width: 1200px"]{padding-left:20px!important;padding-right:20px!important}
+.theme-root [style*="padding: 112px"],.theme-root [style*="padding: 120px"]{padding-top:72px!important;padding-bottom:72px!important}
+.theme-root #top{padding-top:48px!important;gap:40px!important}
+.theme-root [style*="display: flex"]{flex-wrap:wrap}
+.theme-root [style*="gap: 72px"],.theme-root [style*="gap: 48px"]{gap:28px!important}
+.theme-root h1{font-size:72px!important}
+.theme-root h2.serif{font-size:46px!important}
+.theme-root #contact h2{font-size:52px!important}
+.theme-root #top img{height:420px!important}
+.theme-root .navlink{display:none}
+.theme-root .card[style*="padding: 32px"],.theme-root .card[style*="padding: 40px"],.theme-root .card[style*="padding: 28px"]{padding:20px!important}
+.theme-root [style*="min-width: 320px"]{min-width:0!important}
+.theme-root [style*="border-left: 1px solid var(--line)"]{border-left:0!important}
+.theme-root [style*="padding: 28px 24px 28px 0"],.theme-root [style*="padding: 28px 24px;"],.theme-root [style*="padding: 28px 0 28px 24px"],.theme-root [style*="padding: 28px 24px 32px"]{padding:20px 12px 20px 0!important}
+.theme-root #contact a[style*="padding: 28px"]{padding:20px 0 0!important}
+.theme-root [style*="repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink)"] span.serif{font-size:34px!important}
+}
+@media (max-width: 480px){
+.theme-root h1{font-size:60px!important}
+.theme-root h2.serif{font-size:40px!important}
+.theme-root #contact h2{font-size:44px!important}
+.theme-root [style*="repeat(6, minmax(0, 1fr))"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.theme-root [style*="font-size: 19px; line-height: 1.6"]{font-size:17px!important}
+.theme-root [style*="font-size: 32px; font-weight: 600"]{font-size:26px!important}
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="theme-root theme-light" id="root" style="width: 100%; min-height: 6200px; box-sizing: border-box;">
+
+<header style="position: sticky; top: 0; z-index: 10; background: var(--header); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);">
+<nav style="max-width: 1200px; margin: 0 auto; padding: 0 40px; height: 72px; display: flex; align-items: center; justify-content: space-between;" aria-label="Main">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; color: var(--ink);">
+<span class="serif" style="font-size: 30px; line-height: 1;">KK</span>
+<span class="mono" style="font-size: 13px; color: var(--muted);">khalid.korena</span>
+</a>
+<div style="display: flex; align-items: center; gap: 32px;">
+<a class="navlink" href="#services">Services</a>
+<a class="navlink" href="#skills">Skills</a>
+<a class="navlink" href="#experience">Experience</a>
+<a class="navlink" href="#projects">Projects</a>
+<a class="navlink" href="#certifications">Certifications</a>
+<button type="button" class="theme-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+<span class="ic-dark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+<span class="ic-light"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg></span>
+</button>
+<a href="#contact" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 4px; background: var(--inv); color: #F3F1EC; font-size: 15px; font-weight: 500;">Contact</a>
+</div>
+</nav>
+</header>
+
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding: 96px 40px 80px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 72px; align-items: end;">
+<div class="d3-out" style="display: flex; flex-direction: column; gap: 28px;">
+<div class="label">Cloud Solutions Architect / Cloud &amp; DevOps Engineer</div>
+<h1 class="serif" style="margin: 0; font-size: 132px; line-height: .92; letter-spacing: -0.02em;">Khalid<br><span style="font-style: italic; color: var(--accent-text);">Korena</span></h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; max-width: 640px; color: var(--body);">I design, build, secure, and optimize cloud architectures across AWS, Azure, and other cloud providers, with a focus on scalability, high availability, reliability, performance, and security. I modernize legacy systems, automate infrastructure, troubleshoot recurring technical issues, and build websites and business systems that are designed to scale with the business.</p>
+<div style="display: flex; gap: 12px; align-items: center;">
+<a href="mailto:khalid.korena14@outlook.com" style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 24px; border-radius: 4px; background: var(--accent); color: #FFFFFF; font-size: 16px; font-weight: 500;">Email me
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="https://github.com/khalidkorena15" style="display: inline-flex; align-items: center; height: 52px; padding: 0 24px; border-radius: 4px; border: 1px solid var(--ink); color: var(--ink); font-size: 16px; font-weight: 500;">View GitHub</a>
+<a href="assets/khalid-korena-cv.pdf" download="Khalid-Korena-CV.pdf" style="display: inline-flex; align-items: center; height: 52px; padding: 0 16px; color: var(--ink); font-size: 16px; text-decoration: underline; text-underline-offset: 4px;">Download CV</a>
+</div>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px;">
+<div class="d3-photo" style="position: relative;">
+<div style="position: absolute; left: 24px; top: 24px; right: -24px; bottom: -24px; background: var(--accent); border-radius: 6px;"></div>
+<img src="assets/portrait.jpg" alt="Portrait of Khalid Korena in a navy three-piece suit" style="position: relative; display: block; width: 100%; height: 540px; object-fit: cover; object-position: center 20%; border-radius: 6px;">
+</div>
+<figcaption class="mono" style="margin-top: 28px; font-size: 12.5px; color: var(--muted);">AWS / Azure / Linux / Windows Server / Networking</figcaption>
+</figure>
+</section>
+
+<section aria-label="At a glance" style="max-width: 1200px; margin: 0 auto; padding: 0 40px 96px;">
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line);">
+<div class="d3-flip" style="padding: 28px 24px 28px 0; display: flex; flex-direction: column; gap: 6px;">
+<span class="serif" style="font-size: 56px; line-height: 1;">2</span>
+<span style="font-size: 15px; color: var(--muted);">Cloud platforms: AWS and Azure</span>
+</div>
+<div class="d3-flip r2" style="padding: 28px 24px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px;">
+<span class="serif" style="font-size: 56px; line-height: 1;">11</span>
+<span style="font-size: 15px; color: var(--muted);">Certifications across AWS, Microsoft, Red Hat and Cisco</span>
+</div>
+<div class="d3-flip r3" style="padding: 28px 24px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px;">
+<span class="serif" style="font-size: 56px; line-height: 1;">7</span>
+<span style="font-size: 15px; color: var(--muted);">Public projects on GitHub</span>
+</div>
+<div class="d3-flip r4" style="padding: 28px 0 28px 24px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px;">
+<span class="serif" style="font-size: 56px; line-height: 1;">2022</span>
+<span style="font-size: 15px; color: var(--muted);">Working in IT infrastructure since</span>
+</div>
+</div>
+</section>
+
+<section id="services" style="max-width: 1200px; margin: 0 auto; padding: 24px 40px 120px; display: flex; flex-direction: column; gap: 56px;">
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; align-items: end;">
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<div class="label">Services</div>
+<h2 class="serif d3-rise" style="margin: 0; font-size: 72px; line-height: .98;">One engineer, the <span style="font-style: italic; color: var(--accent-text);">whole</span> stack.</h2>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.65; color: var(--body);">From the first architecture sketch to the alert that wakes someone up at 3am, I take a system through its full life. You get one person who designs it, ships it, locks it down and keeps an eye on it.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line);">
+<div class="d3-flip " style="padding: 28px 24px 32px 0; display: flex; flex-direction: column; gap: 12px;">
+<span class="mono" style="font-size: 13px; color: var(--accent-text);">01</span>
+<span class="serif" style="font-size: 48px; line-height: 1;">Build</span>
+<span style="font-size: 15.5px; line-height: 1.6; color: var(--body);">Architecture and deployment on AWS and Azure, from VPCs and containers to serverless pipelines.</span>
+</div>
+<div class="d3-flip r2" style="padding: 28px 24px 32px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px;">
+<span class="mono" style="font-size: 13px; color: var(--accent-text);">02</span>
+<span class="serif" style="font-size: 48px; line-height: 1;">Secure</span>
+<span style="font-size: 15.5px; line-height: 1.6; color: var(--body);">Least-privilege access, MFA, firewalls and continuous security scanning.</span>
+</div>
+<div class="d3-flip r3" style="padding: 28px 24px 32px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px;">
+<span class="mono" style="font-size: 13px; color: var(--accent-text);">03</span>
+<span class="serif" style="font-size: 48px; line-height: 1;">Monitor</span>
+<span style="font-size: 15.5px; line-height: 1.6; color: var(--body);">Logs, metrics and alarms that tell you something is wrong before users do.</span>
+</div>
+<div class="d3-flip r4" style="padding: 28px 24px 32px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px;">
+<span class="mono" style="font-size: 13px; color: var(--accent-text);">04</span>
+<span class="serif" style="font-size: 48px; line-height: 1;">Modernize</span>
+<span style="font-size: 15.5px; line-height: 1.6; color: var(--body);">Upgrading legacy systems and finding the real cause behind recurring problems.</span>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+<div class="card d3-left" style="padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 8px; background: var(--badge-bg); color: var(--badge-fg);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 9.5 4.5 4.5 0 0 0 7 18z"></path></svg></span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.25;">Cloud architecture and migration</h3>
+<ul style="margin: 0; padding-left: 18px; font-size: 15.5px; line-height: 1.75; color: var(--body);"><li>Solution design on AWS and Azure</li><li>Migrating on-prem systems to the cloud</li><li>Multi-cloud setups</li><li>Cost optimization</li></ul>
+</div>
+<div class="card d3-rise" style="padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 8px; background: var(--badge-bg); color: var(--badge-fg);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4"></path><path d="M3 11V9a3 3 0 0 1 3-3h15"></path><path d="M7 22l-4-4 4-4"></path><path d="M21 13v2a3 3 0 0 1-3 3H3"></path></svg></span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.25;">DevOps and automation</h3>
+<ul style="margin: 0; padding-left: 18px; font-size: 15.5px; line-height: 1.75; color: var(--body);"><li>CI/CD pipelines</li><li>Infrastructure as Code: Terraform, CloudFormation, Bicep</li><li>Containers and Kubernetes (ECS, EKS, AKS)</li><li>Automation scripts in PowerShell, Bash and Python</li></ul>
+</div>
+<div class="card d3-right" style="padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 8px; background: var(--badge-bg); color: var(--badge-fg);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7.5-7 9-4-1.5-7-5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.25;">Security and monitoring</h3>
+<ul style="margin: 0; padding-left: 18px; font-size: 15.5px; line-height: 1.75; color: var(--body);"><li>IAM, MFA, RBAC and SSO</li><li>Firewalls and VPN: pfSense, Fortinet</li><li>GuardDuty, Prowler and security audits</li><li>CloudWatch and Log Analytics alerting</li><li>Backup and disaster recovery</li></ul>
+</div>
+<div class="card d3-left" style="padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 8px; background: var(--badge-bg); color: var(--badge-fg);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"></path></svg></span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.25;">Legacy modernization and troubleshooting</h3>
+<ul style="margin: 0; padding-left: 18px; font-size: 15.5px; line-height: 1.75; color: var(--body);"><li>Auditing old systems and infrastructure</li><li>Fixing root causes, not symptoms</li><li>Upgrading and re-platforming</li><li>Stabilizing unreliable services</li></ul>
+</div>
+<div class="card d3-rise" style="padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 8px; background: var(--badge-bg); color: var(--badge-fg);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M7 6.5h.01M10 6.5h.01"></path></svg></span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.25;">Websites and business systems</h3>
+<ul style="margin: 0; padding-left: 18px; font-size: 15.5px; line-height: 1.75; color: var(--body);"><li>Corporate websites</li><li>Internal dashboards and company systems</li><li>Forms and mail backends</li><li>AI assistants and integrations</li><li>Mobile app backend operations</li></ul>
+</div>
+<div class="card d3-right" style="padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+<span style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 8px; background: var(--badge-bg); color: var(--badge-fg);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="5" rx="1"></rect><rect x="2" y="17" width="6" height="5" rx="1"></rect><rect x="16" y="17" width="6" height="5" rx="1"></rect><path d="M12 7v5M5 17v-2a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v2"></path></svg></span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.25;">Networking, IT infrastructure and CCTV</h3>
+<ul style="margin: 0; padding-left: 18px; font-size: 15.5px; line-height: 1.75; color: var(--body);"><li>Routing and switching (Cisco)</li><li>Company networks, VLANs and subnetting</li><li>Site-to-site and remote access VPN</li><li>Wi-Fi and access points (WPA2, WPA3)</li><li>Structured cabling, racks and PoE</li><li>CCTV and IP camera systems</li><li>VoIP phone systems</li><li>Active Directory and Entra ID</li><li>Corporate email, domains and hosting</li><li>Windows Server and Linux administration</li></ul>
+</div>
+</div>
+<div class="card d3-rise" style="padding: 32px 36px; display: flex; align-items: center; justify-content: space-between; gap: 40px; background: var(--inv); color: #F3F1EC; border-color: transparent;">
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<span class="mono" style="font-size: 12px; letter-spacing: .08em; color: #A3A7AE;">ALSO: IT CONSULTING / TEAM LEADERSHIP / TRAINING</span>
+<span class="serif" style="font-size: 34px; line-height: 1.1;">Not sure where to start? Tell me the problem.</span>
+</div>
+<a href="mailto:khalid.korena14@outlook.com" style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 24px; border-radius: 4px; background: var(--accent); color: #FFFFFF; font-size: 16px; font-weight: 500;">Start a conversation<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</section>
+
+<section id="skills" class="d3-tilt" style="transform-origin: 50% 0%; background: var(--inv); color: #F3F1EC;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 40px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 72px;">
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<div class="label" style="color: #A3A7AE;">Technical skills</div>
+<h2 class="serif d3-rise" style="margin: 0; font-size: 64px; line-height: 1;">What I work with</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #C9CCD1;">From racking a VLAN to wiring a serverless pipeline: networking foundations first, cloud on top, security throughout.</p>
+</div>
+<div style="display: flex; flex-direction: column;">
+<div class="d3-left" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; padding: 24px 0; border-top: 1px solid #3A3D44;">
+<div style="font-size: 17px; font-weight: 500;">Cloud platforms</div>
+<div class="mono" style="font-size: 14px; line-height: 1.9; color: #C9CCD1;">AWS: EC2, S3, IAM, VPC, ECS, Fargate, ECR, Lambda, API Gateway, DynamoDB, Step Functions, CloudWatch, GuardDuty<br>Azure: VMs, Azure AD, App Service, Storage, Networking</div>
+</div>
+<div class="d3-left" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; padding: 24px 0; border-top: 1px solid #3A3D44;">
+<div style="font-size: 17px; font-weight: 500;">Systems and networking</div>
+<div class="mono" style="font-size: 14px; line-height: 1.9; color: #C9CCD1;">Windows Server, Red Hat Linux, Active Directory, Entra ID and SSO, Group Policy, TCP/IP, DNS, DHCP, VLANs, site-to-site and remote access VPN, routing and switching, Wi-Fi and access points, PoE, structured cabling, CCTV and IP cameras, VoIP, backup and DR</div>
+</div>
+<div class="d3-left" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; padding: 24px 0; border-top: 1px solid #3A3D44;">
+<div style="font-size: 17px; font-weight: 500;">Containers and DevOps</div>
+<div class="mono" style="font-size: 14px; line-height: 1.9; color: #C9CCD1;">Docker, Kubernetes (EKS, AKS), Amazon ECS / Fargate, Nginx, ALB, Auto Scaling, CI/CD pipelines, Terraform, CloudFormation, Bicep</div>
+</div>
+<div class="d3-left" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; padding: 24px 0; border-top: 1px solid #3A3D44;">
+<div style="font-size: 17px; font-weight: 500;">Scripting and tools</div>
+<div class="mono" style="font-size: 14px; line-height: 1.9; color: #C9CCD1;">PowerShell, Bash, Python, AWS CLI, Azure CLI, cPanel, HTML / CSS / JavaScript, PHP, MySQL</div>
+</div>
+<div class="d3-left" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; padding: 24px 0; border-top: 1px solid #3A3D44; border-bottom: 1px solid #3A3D44;">
+<div style="font-size: 17px; font-weight: 500;">Security and monitoring</div>
+<div class="mono" style="font-size: 14px; line-height: 1.9; color: #C9CCD1;">IAM least privilege, MFA, RBAC, pfSense, Fortinet, Prowler, GuardDuty, CloudWatch, Log Analytics</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="experience" style="max-width: 1200px; margin: 0 auto; padding: 120px 40px 96px;">
+<div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 48px;">
+<h2 class="serif d3-rise" style="margin: 0; font-size: 64px; line-height: 1;">Experience</h2>
+<div class="label">3 roles / 2022 to present</div>
+</div>
+<div style="display: flex; flex-direction: column;">
+
+<article class="d3-rise" style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; padding: 40px 0; border-top: 1px solid var(--ink);">
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<span class="mono" style="font-size: 14px;">Jul 2026 - Present</span>
+<span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; height: 28px; padding: 0 10px; border-radius: 4px; background: var(--badge-bg); color: var(--badge-fg); font-size: 13px; font-weight: 500;"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent);"></span>Current role</span>
+<span style="font-size: 14px; color: var(--muted);">Remote, part-time</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.01em;">Technical Operations Manager</h3>
+<div style="font-size: 17px; color: var(--muted); margin-top: 4px;">Takween United Publishing</div>
+</div>
+<ul style="margin: 0; padding-left: 20px; font-size: 16.5px; line-height: 1.7; color: var(--body);">
+<li>Manage and maintain the company's iOS and Android app and its internal dashboard</li>
+<li>Administer the cPanel server hosting the mobile app backend and related services</li>
+<li>Built and maintain the company website; manage corporate email infrastructure</li>
+<li>Lead a small technical team overseeing daily operations and deliverables</li>
+<li>Designed and automated an EPUB production pipeline; run digital publishing on Amazon KDP and Kobo Writing Life</li>
+</ul>
+</div>
+</article>
+
+<article class="d3-rise" style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; padding: 40px 0; border-top: 1px solid var(--line);">
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<span class="mono" style="font-size: 14px;">Mar 2023 - Apr 2023</span>
+<span style="font-size: 14px; color: var(--muted);">Khartoum, Sudan</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.01em;">Network Administrator Intern</h3>
+<div style="font-size: 17px; color: var(--muted); margin-top: 4px;">City College</div>
+</div>
+<ul style="margin: 0; padding-left: 20px; font-size: 16.5px; line-height: 1.7; color: var(--body);">
+<li>Deployed and configured NComputing Virtual Desktop Infrastructure across the internal and external network</li>
+<li>Audited network devices, migrated data from primary to backup servers, and reviewed pfSense firewall rules and network design</li>
+</ul>
+</div>
+</article>
+
+<article class="d3-rise" style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 48px; padding: 40px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<span class="mono" style="font-size: 14px;">Jun 2022 - Mar 2023</span>
+<span style="font-size: 14px; color: var(--muted);">Khartoum, Sudan</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.01em;">System Administrator Intern</h3>
+<div style="font-size: 17px; color: var(--muted); margin-top: 4px;">RCB Bank</div>
+</div>
+<ul style="margin: 0; padding-left: 20px; font-size: 16.5px; line-height: 1.7; color: var(--body);">
+<li>Managed user accounts, security policies and Group Policy software deployment in Active Directory</li>
+<li>Monitored network communications and verified backup integrity on SAN storage</li>
+</ul>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="projects" style="max-width: 1200px; margin: 0 auto; padding: 48px 40px 112px;">
+<div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<h2 class="serif d3-rise" style="margin: 0; font-size: 64px; line-height: 1;">Selected projects</h2>
+<p style="margin: 0; font-size: 17px; color: var(--muted); max-width: 560px;">Hands-on builds, each documented with its architecture on GitHub. Select a diagram to view it full size.</p>
+</div>
+<a href="https://github.com/khalidkorena15" class="mono" style="font-size: 14px;">github.com/khalidkorena15</a>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+<div class="card d3-rise" style="grid-column: 1 / -1; padding: 28px; display: flex; flex-direction: column; gap: 20px; color: var(--ink);">
+<div style="display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 36px; align-items: center;">
+<button type="button" class="cert shot" data-lb="pharma:0" aria-label="View screenshot: PharmaLink landing page" style="padding: 8px; background: var(--shot);">
+<span class="cert-img"><img src="assets/pl-landing-dark.jpg" alt="PharmaLink landing page in dark mode" style="display: block; width: 100%; aspect-ratio: 1600 / 860; object-fit: cover; border-radius: 4px;"></span>
+</button>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><span class="label">Platform / Featured</span><span style="display: inline-flex; align-items: center; gap: 8px; height: 28px; padding: 0 10px; border-radius: 4px; background: var(--badge-bg); color: var(--badge-fg); font-size: 13px; font-weight: 500;"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent);"></span>Live in production</span></div>
+<h3 style="margin: 0; font-size: 32px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.15;">PharmaLink</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: var(--body);">A B2B platform connecting pharmaceutical companies and their distributors with licensed pharmacies in Sudan. It replaces phone calls and paper invoices with one auditable system: a shared catalog, batch expiry tracking with FEFO alerts, a full order to payment flow with installment plans, price negotiation, mutual ratings, live support chat, and automatic monthly commission settlement.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="node">Node.js / Express</span><span class="node">React 18 / Vite</span><span class="node">Tailwind</span><span class="node">MySQL / MariaDB</span><span class="node">JWT + MFA</span><span class="node">Arabic and English, RTL</span></div>
+<div style="display: flex; gap: 20px; align-items: center;">
+<a href="https://pharmalink-sd.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 4px; background: var(--accent); color: #FFFFFF; font-size: 15px; font-weight: 500;">Visit pharmalink-sd.com<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+<a href="https://github.com/khalidkorena15/pharmalink-overview" target="_blank" rel="noopener" style="font-size: 15px; font-weight: 500; color: var(--accent-text);">Read the overview</a>
+</div>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px;">
+
+<button type="button" class="cert shot" data-lb="pharma:1" aria-label="View screenshot: Landing page (light)" style="padding: 6px; background: var(--shot);">
+<span class="cert-img"><img src="assets/pl-landing-light.jpg" alt="Landing page (light)" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 3px;"></span>
+<span class="mono" style="padding: 8px 2px 2px; font-size: 11px; color: var(--muted);">Landing page (light)</span>
+</button>
+
+<button type="button" class="cert shot" data-lb="pharma:2" aria-label="View screenshot: Services" style="padding: 6px; background: var(--shot);">
+<span class="cert-img"><img src="assets/pl-services.jpg" alt="Services" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 3px;"></span>
+<span class="mono" style="padding: 8px 2px 2px; font-size: 11px; color: var(--muted);">Services</span>
+</button>
+
+<button type="button" class="cert shot" data-lb="pharma:3" aria-label="View screenshot: Registration" style="padding: 6px; background: var(--shot);">
+<span class="cert-img"><img src="assets/pl-registration.jpg" alt="Registration" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 3px;"></span>
+<span class="mono" style="padding: 8px 2px 2px; font-size: 11px; color: var(--muted);">Registration</span>
+</button>
+
+<button type="button" class="cert shot" data-lb="pharma:4" aria-label="View screenshot: Email confirmation" style="padding: 6px; background: var(--shot);">
+<span class="cert-img"><img src="assets/pl-email-code.jpg" alt="Email confirmation" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 3px;"></span>
+<span class="mono" style="padding: 8px 2px 2px; font-size: 11px; color: var(--muted);">Email confirmation</span>
+</button>
+
+<button type="button" class="cert shot" data-lb="pharma:5" aria-label="View screenshot: Account activated" style="padding: 6px; background: var(--shot);">
+<span class="cert-img"><img src="assets/pl-activated.jpg" alt="Account activated" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 3px;"></span>
+<span class="mono" style="padding: 8px 2px 2px; font-size: 11px; color: var(--muted);">Account activated</span>
+</button>
+
+</div>
+</div>
+<div class="card d3-rise" style="grid-column: 1 / -1; padding: 28px; display: flex; flex-direction: column; gap: 20px; color: var(--ink);">
+<div style="display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 36px; align-items: center;">
+<button type="button" class="cert shot" data-lb="web:0" aria-label="View screenshot: Takween United website hero" style="padding: 8px; background: var(--shot);">
+<span class="cert-img"><img src="assets/tk-hero.jpg" alt="Takween United website hero section" style="display: block; width: 100%; aspect-ratio: 1600 / 873; object-fit: cover; border-radius: 4px;"></span>
+</button>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="display: flex; justify-content: space-between; align-items: center;"><span class="label">Web / Featured</span><span style="display: inline-flex; align-items: center; gap: 8px; height: 28px; padding: 0 10px; border-radius: 4px; background: var(--badge-bg); color: var(--badge-fg); font-size: 13px; font-weight: 500;"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent);"></span>Live in production</span></div>
+<h3 style="margin: 0; font-size: 32px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.15;">Takween United Publishing Website</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: var(--body);">A corporate site built from scratch for a publishing group founded in 2006. Calm luxury design in cream, maroon and gold, a 3D logo that rotates with scroll, pinned sections, animated counters, and a PHP mail backend for the literary agent and author contract forms.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="node">HTML / CSS / JS</span><span class="node">GSAP ScrollTrigger</span><span class="node">Lenis</span><span class="node">PHP mail backend</span><span class="node">Responsive</span></div>
+<div style="display: flex; gap: 20px; align-items: center;">
+<a href="https://tkweeen.com" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 4px; background: var(--accent); color: #FFFFFF; font-size: 15px; font-weight: 500;">Visit tkweeen.com<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+<a href="https://github.com/khalidkorena15/takweeen-website" target="_blank" rel="noopener" style="font-size: 15px; font-weight: 500; color: var(--accent-text);">View repository</a>
+</div>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px;">
+
+<button type="button" class="cert shot" data-lb="web:1" aria-label="View screenshot: Our story" style="padding: 6px; background: var(--shot);">
+<span class="cert-img"><img src="assets/tk-story.jpg" alt="Our story" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 3px;"></span>
+<span class="mono" style="padding: 8px 2px 2px; font-size: 11px; color: var(--muted);">Our story</span>
+</button>
+
+<button type="button" class="cert shot" data-lb="web:2" aria-label="View screenshot: Services" style="padding: 6px; background: var(--shot);">
+<span class="cert-img"><img src="assets/tk-services.jpg" alt="Services" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 3px;"></span>
+<span class="mono" style="padding: 8px 2px 2px; font-size: 11px; color: var(--muted);">Services</span>
+</button>
+
+<button type="button" class="cert shot" data-lb="web:3" aria-label="View screenshot: App promo" style="padding: 6px; background: var(--shot);">
+<span class="cert-img"><img src="assets/tk-app.jpg" alt="App promo" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 3px;"></span>
+<span class="mono" style="padding: 8px 2px 2px; font-size: 11px; color: var(--muted);">App promo</span>
+</button>
+
+<button type="button" class="cert shot" data-lb="web:4" aria-label="View screenshot: Stats" style="padding: 6px; background: var(--shot);">
+<span class="cert-img"><img src="assets/tk-stats.jpg" alt="Stats" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 3px;"></span>
+<span class="mono" style="padding: 8px 2px 2px; font-size: 11px; color: var(--muted);">Stats</span>
+</button>
+
+<button type="button" class="cert shot" data-lb="web:5" aria-label="View screenshot: Testimonials" style="padding: 6px; background: var(--shot);">
+<span class="cert-img"><img src="assets/tk-testimonials.jpg" alt="Testimonials" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 3px;"></span>
+<span class="mono" style="padding: 8px 2px 2px; font-size: 11px; color: var(--muted);">Testimonials</span>
+</button>
+
+<button type="button" class="cert shot" data-lb="web:6" aria-label="View screenshot: Contact and footer" style="padding: 6px; background: var(--shot);">
+<span class="cert-img"><img src="assets/tk-contact.jpg" alt="Contact and footer" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: 3px;"></span>
+<span class="mono" style="padding: 8px 2px 2px; font-size: 11px; color: var(--muted);">Contact and footer</span>
+</button>
+
+</div>
+</div>
+
+<div class="card proj d3-left" style="grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 28px; color: var(--ink);">
+<button type="button" class="cert shot" data-lb="proj:0" aria-label="View architecture diagram" style="padding: 8px; background: var(--shot);">
+<span class="cert-img"><img src="assets/arch-bank.jpg" alt="Architecture diagram" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: #FFFFFF; border-radius: 4px;"></span>
+<span class="mono" style="padding: 10px 4px 2px; font-size: 12px; color: var(--muted);">Architecture diagram / click to enlarge</span>
+</button>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="display: flex; justify-content: space-between; align-items: center;"><span class="label">AWS / Security</span><span class="mono" style="font-size: 13px; color: var(--muted);">01</span></div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.01em;">Bank Transaction Microservice</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--body);">A secure banking microservice on AWS with public and private VPC subnets, bastion-host access, and continuous security monitoring.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+<span class="node">Bastion</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B8F96" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><span class="node">Private subnet</span><span class="node">CloudWatch</span><span class="node">GuardDuty</span><span class="node">Prowler</span>
+</div>
+<a href="https://github.com/khalidkorena15/Bank-Transaction-Microservice-AWS" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: var(--accent-text);">View repository<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+</div>
+</div>
+
+<div class="card proj d3-right" style="grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 28px; color: var(--ink);">
+<button type="button" class="cert shot" data-lb="proj:1" aria-label="View architecture diagram" style="padding: 8px; background: var(--shot);">
+<span class="cert-img"><img src="assets/arch-multicloud.jpg" alt="Architecture diagram" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: #FFFFFF; border-radius: 4px;"></span>
+<span class="mono" style="padding: 10px 4px 2px; font-size: 12px; color: var(--muted);">Architecture diagram / click to enlarge</span>
+</button>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="display: flex; justify-content: space-between; align-items: center;"><span class="label">AWS + Azure</span><span class="mono" style="font-size: 13px; color: var(--muted);">02</span></div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.01em;">Multi-Cloud Application</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--body);">A cross-cloud architecture routing traffic from an AWS ECS frontend to an Azure App Service Flask backend over HTTPS.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+<span class="node">ECS Fargate</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B8F96" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><span class="node">HTTPS</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B8F96" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><span class="node">Azure App Service</span>
+</div>
+<a href="https://github.com/khalidkorena15/multi-cloud-aws-azure" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: var(--accent-text);">View repository<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+</div>
+</div>
+
+<div class="card proj d3-left" style="grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 28px; color: var(--ink);">
+<button type="button" class="cert shot" data-lb="proj:2" aria-label="View live service behind the load balancer" style="padding: 8px; background: var(--shot);">
+<span class="cert-img"><img src="assets/arch-ecs.jpg" alt="Live service behind the load balancer" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: #FFFFFF; border-radius: 4px;"></span>
+<span class="mono" style="padding: 10px 4px 2px; font-size: 12px; color: var(--muted);">Live service behind the load balancer / click to enlarge</span>
+</button>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="display: flex; justify-content: space-between; align-items: center;"><span class="label">Containers / HA</span><span class="mono" style="font-size: 13px; color: var(--muted);">03</span></div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.01em;">ECS Fargate Nginx Deployment</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--body);">A production-style containerized service with an Application Load Balancer, multi-AZ high availability and auto scaling.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+<span class="node">ALB</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B8F96" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><span class="node">ECS Fargate x Multi-AZ</span><span class="node">Auto Scaling</span><span class="node">ECR</span>
+</div>
+<a href="https://github.com/khalidkorena15/aws-ecs-fargate-nginx-project" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: var(--accent-text);">View repository<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+</div>
+</div>
+
+<div class="card proj d3-right" style="grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 28px; color: var(--ink);">
+<button type="button" class="cert shot" data-lb="proj:3" aria-label="View architecture diagram" style="padding: 8px; background: var(--shot);">
+<span class="cert-img"><img src="assets/arch-serverless.jpg" alt="Architecture diagram" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: #FFFFFF; border-radius: 4px;"></span>
+<span class="mono" style="padding: 10px 4px 2px; font-size: 12px; color: var(--muted);">Architecture diagram / click to enlarge</span>
+</button>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="display: flex; justify-content: space-between; align-items: center;"><span class="label">Serverless</span><span class="mono" style="font-size: 13px; color: var(--muted);">04</span></div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.01em;">Serverless Event Processing API</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--body);">An event-driven pipeline with retry logic and full CloudWatch observability.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+<span class="node">API Gateway</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B8F96" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><span class="node">Lambda</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B8F96" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><span class="node">Step Functions</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B8F96" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><span class="node">DynamoDB</span>
+</div>
+<a href="https://github.com/khalidkorena15/serverless-event-processing-api" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: var(--accent-text);">View repository<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+</div>
+</div>
+
+<div class="card proj d3-left" style="grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 28px; color: var(--ink);">
+<button type="button" class="cert shot" data-lb="proj:4" aria-label="View system architecture" style="padding: 8px; background: var(--shot);">
+<span class="cert-img"><img src="assets/arch-takween.jpg" alt="System architecture" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: #FFFFFF; border-radius: 4px;"></span>
+<span class="mono" style="padding: 10px 4px 2px; font-size: 12px; color: var(--muted);">System architecture / click to enlarge</span>
+</button>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="display: flex; justify-content: space-between; align-items: center;"><span class="label">AI / Web platform</span><span class="mono" style="font-size: 13px; color: var(--muted);">05</span></div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.01em;">Takween Assistant</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--body);">An embedded AI helpdesk chat widget for an author-management platform, with tiered escalation, an admin FAQ console and full audit logging.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+<span class="node">PHP</span><span class="node">MySQL</span><span class="node">Claude API</span><span class="node">Audit log</span>
+</div>
+<a href="https://github.com/khalidkorena15/Takween-Assistant" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: var(--accent-text);">View repository<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+</div>
+</div>
+
+<div class="card d3-right" style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 20px; padding: 32px; background: var(--msurf); border-style: dashed; border-color: var(--line3);">
+<div style="display: flex; justify-content: space-between; align-items: center;"><span class="label">Identity / Hybrid</span><span class="mono" style="font-size: 13px; color: var(--muted);">In progress</span></div>
+<h3 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.01em;">Hybrid Active Directory Lab</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--body);">Connecting an on-prem Windows Server domain (corp.local) to AWS Managed Microsoft AD through a forest trust, with SSO via IAM Identity Center.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+<span class="node" style="background: var(--surface);">On-prem AD DS</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B8F96" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><span class="node" style="background: var(--surface);">Forest trust</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B8F96" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg><span class="node" style="background: var(--surface);">AWS Managed AD</span><span class="node" style="background: var(--surface);">IAM Identity Center</span>
+</div>
+</div>
+
+</div>
+<div style="display: flex; flex-direction: column; gap: 24px; margin-top: 72px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--ink);"><span class="label" style="color: var(--ink);">Infrastructure and Azure labs</span><span class="mono" style="font-size: 12px; color: var(--muted);">04</span></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+<div class="card proj d3-left" style="grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 28px; color: var(--ink);">
+<button type="button" class="cert shot" data-lb="proj:5" aria-label="View image: NComputing thin clients deployed in a computer lab" style="padding: 8px; background: var(--shot);">
+<span class="cert-img"><img src="assets/lab-ncomputing.jpg" alt="NComputing thin clients deployed in a computer lab" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span class="mono" style="padding: 10px 4px 2px; font-size: 12px; color: var(--muted);">NComputing thin clients deployed in a computer lab / click to enlarge</span>
+</button>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3;">Virtualization and Infrastructure Deployment</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--body);">Configuring and deploying Virtual Desktop Infrastructure using NComputing.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="node">IT Infrastructure</span><span class="node">Systems Administration</span></div>
+</div>
+</div>
+<div class="card proj d3-right" style="grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 28px; color: var(--ink);">
+<button type="button" class="cert shot" data-lb="proj:6" aria-label="View image: Network Watcher connection troubleshoot" style="padding: 8px; background: var(--shot);">
+<span class="cert-img"><img src="assets/lab-network.jpg" alt="Network Watcher connection troubleshoot" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top left; border-radius: 4px;"></span>
+<span class="mono" style="padding: 10px 4px 2px; font-size: 12px; color: var(--muted);">Network Watcher connection troubleshoot / click to enlarge</span>
+</button>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3;">Cloud Networking and Deployment</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--body);">Experimenting with pairing a group of VMs and App Services in different geographical regions and across several virtual networks.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="node">Cloud Computing</span><span class="node">Azure Infrastructure</span></div>
+</div>
+</div>
+<div class="card proj d3-left" style="grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 28px; color: var(--ink);">
+<button type="button" class="cert shot" data-lb="proj:7" aria-label="View image: Managed disk deployed with Bicep" style="padding: 8px; background: var(--shot);">
+<span class="cert-img"><img src="assets/lab-bicep.jpg" alt="Managed disk deployed with Bicep" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top left; border-radius: 4px;"></span>
+<span class="mono" style="padding: 10px 4px 2px; font-size: 12px; color: var(--muted);">Managed disk deployed with Bicep / click to enlarge</span>
+</button>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3;">Virtualization and Desktop Systems</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--body);">Creating a Microsoft.Compute/disks resource with the Bicep language.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="node">Virtualization</span><span class="node">Networked Computing</span></div>
+</div>
+</div>
+<div class="card proj d3-right" style="grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 28px; color: var(--ink);">
+<button type="button" class="cert shot" data-lb="proj:8" aria-label="View image: Azure Storage Explorer" style="padding: 8px; background: var(--shot);">
+<span class="cert-img"><img src="assets/lab-storage.jpg" alt="Azure Storage Explorer" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top left; border-radius: 4px;"></span>
+<span class="mono" style="padding: 10px 4px 2px; font-size: 12px; color: var(--muted);">Azure Storage Explorer / click to enlarge</span>
+</button>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.3;">Azure Storage Management</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--body);">Managing blob containers and file shares in Azure Storage Explorer, with SAS-authenticated uploads and downloads.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="node">Azure Storage</span><span class="node">Blob and File Shares</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="certifications" style="border-top: 1px solid var(--line); background: var(--surface);">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 40px; display: flex; flex-direction: column; gap: 56px;">
+<div style="display: flex; justify-content: space-between; align-items: end; gap: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<h2 class="serif d3-rise" style="margin: 0; font-size: 64px; line-height: 1;">Certifications</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: var(--muted); max-width: 560px;">Formal training across Cisco, Microsoft, AWS and Red Hat. Select any certificate to view it full size.</p>
+</div>
+<div class="label">11 credentials</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px 24px;">
+<div style="grid-column: span 3; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--ink);"><span class="label" style="color: var(--ink);">Microsoft</span><span class="mono" style="font-size: 12px; color: var(--muted);">06</span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; flex-grow: 1;">
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:0" style="flex-grow: 1;" aria-label="View certificate: Microsoft Certified: Azure Administrator Associate">
+<span class="cert-img"><img src="assets/cert-azure-associate.jpg" alt="Microsoft Certified: Azure Administrator Associate certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">Microsoft Certified: Azure Administrator Associate</span>
+<span style="font-size: 14px; color: var(--muted);">Microsoft / Nov 2024 / valid to Nov 2027</span>
+</span>
+</button>
+
+<a href="https://learn.microsoft.com/api/credentials/share/en-us/KHALIDABDELRAHMANMUSTAFAKORENA-3726/284ED94E05518574?sharingId" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border: 1px solid var(--line2); border-radius: 8px; background: var(--bg); color: var(--ink);">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--accent-text);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7.5-7 9-4-1.5-7-5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>Verify on Microsoft Learn</span>
+<span class="mono" style="font-size: 11.5px; color: var(--muted); word-break: break-all;">Credential ID 284ED94E05518574</span>
+</a>
+
+</div>
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:1" style="flex-grow: 1;" aria-label="View certificate: Azure Administrator (AZ-104) Official Course">
+<span class="cert-img"><img src="assets/cert-az104.jpg" alt="Azure Administrator (AZ-104) Official Course certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">Azure Administrator (AZ-104) Official Course</span>
+<span style="font-size: 14px; color: var(--muted);">Microsoft Official Course / CLS / Jan 2024</span>
+</span>
+</button>
+
+</div>
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:2" style="flex-grow: 1;" aria-label="View certificate: Microsoft Azure Fundamentals (AZ-900)">
+<span class="cert-img"><img src="assets/cert-az900-ms.jpg" alt="Microsoft Azure Fundamentals (AZ-900) certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">Microsoft Azure Fundamentals (AZ-900)</span>
+<span style="font-size: 14px; color: var(--muted);">Microsoft Official Course / CLS / Jan 2024</span>
+</span>
+</button>
+
+</div>
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:3" style="flex-grow: 1;" aria-label="View certificate: Azure Fundamentals and Azure Administrator">
+<span class="cert-img"><img src="assets/cert-azure-cls.jpg" alt="Azure Fundamentals and Azure Administrator certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">Azure Fundamentals and Azure Administrator</span>
+<span style="font-size: 14px; color: var(--muted);">CLS Learning Solutions / Oct 2023 - Jan 2024</span>
+</span>
+</button>
+
+</div>
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:4" style="flex-grow: 1;" aria-label="View certificate: Microsoft Azure AZ-900">
+<span class="cert-img"><img src="assets/cert-az900-np.jpg" alt="Microsoft Azure AZ-900 certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">Microsoft Azure AZ-900</span>
+<span style="font-size: 14px; color: var(--muted);">Network Plus Training Center / Oct 2022 / 30 hrs</span>
+</span>
+</button>
+
+</div>
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:5" style="flex-grow: 1;" aria-label="View certificate: MCSE: Windows Server 2016">
+<span class="cert-img"><img src="assets/cert-mcse.jpg" alt="MCSE: Windows Server 2016 certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">MCSE: Windows Server 2016</span>
+<span style="font-size: 14px; color: var(--muted);">Network Plus Training Center / Sep 2022 / 60 hrs</span>
+</span>
+</button>
+
+</div>
+
+</div>
+</div>
+<div style="grid-column: span 2; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--ink);"><span class="label" style="color: var(--ink);">Cisco</span><span class="mono" style="font-size: 12px; color: var(--muted);">02</span></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; flex-grow: 1;">
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:6" style="flex-grow: 1;" aria-label="View certificate: Cisco Certified Network Associate (CCNA)">
+<span class="cert-img"><img src="assets/cert-ccna-cisco.jpg" alt="Cisco Certified Network Associate (CCNA) certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">Cisco Certified Network Associate (CCNA)</span>
+<span style="font-size: 14px; color: var(--muted);">Cisco / Oct 2022</span>
+</span>
+</button>
+
+<a href="https://www.cisco.com/go/verifycertificate" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border: 1px solid var(--line2); border-radius: 8px; background: var(--bg); color: var(--ink);">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--accent-text);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7.5-7 9-4-1.5-7-5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>Verify on Cisco</span>
+<span class="mono" style="font-size: 11.5px; color: var(--muted); word-break: break-all;">Verification No. ef387e55d02f4eb7884211ef007b6662</span>
+</a>
+
+</div>
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:7" style="flex-grow: 1;" aria-label="View certificate: CCNA 200-301 Training Course">
+<span class="cert-img"><img src="assets/cert-ccna-np.jpg" alt="CCNA 200-301 Training Course certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">CCNA 200-301 Training Course</span>
+<span style="font-size: 14px; color: var(--muted);">Network Plus Training Center / Aug 2022 / 60 hrs</span>
+</span>
+</button>
+
+</div>
+
+</div>
+</div>
+<div style="grid-column: span 1; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--ink);"><span class="label" style="color: var(--ink);">Red Hat</span><span class="mono" style="font-size: 12px; color: var(--muted);">01</span></div>
+<div style="display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 24px; flex-grow: 1;">
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:8" style="flex-grow: 1;" aria-label="View certificate: Red Hat Linux Administration I and II">
+<span class="cert-img"><img src="assets/cert-redhat.jpg" alt="Red Hat Linux Administration I and II certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">Red Hat Linux Administration I and II</span>
+<span style="font-size: 14px; color: var(--muted);">CLS Learning Solutions / May - Jun 2025</span>
+</span>
+</button>
+
+</div>
+
+</div>
+</div>
+<div style="grid-column: span 2; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--ink);"><span class="label" style="color: var(--ink);">Amazon Web Services</span><span class="mono" style="font-size: 12px; color: var(--muted);">02</span></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; flex-grow: 1;">
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:9" style="flex-grow: 1;" aria-label="View certificate: Ultimate AWS Certified Solutions Architect Associate">
+<span class="cert-img"><img src="assets/cert-aws-saa.jpg" alt="Ultimate AWS Certified Solutions Architect Associate certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">Ultimate AWS Certified Solutions Architect Associate</span>
+<span style="font-size: 14px; color: var(--muted);">Udemy / Stephane Maarek / Aug 2026 / 27 hrs</span>
+</span>
+</button>
+
+<a href="https://www.udemy.com/certificate/UC-e05d26f5-d0eb-4a73-baa1-c3756cb4fffc/" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border: 1px solid var(--line2); border-radius: 8px; background: var(--bg); color: var(--ink);">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--accent-text);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7.5-7 9-4-1.5-7-5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>Verify on Udemy</span>
+<span class="mono" style="font-size: 11.5px; color: var(--muted); word-break: break-all;">UC-e05d26f5-d0eb-4a73-baa1-c3756cb4fffc</span>
+</a>
+
+</div>
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:10" style="flex-grow: 1;" aria-label="View certificate: AWS Cloud Practitioner Essentials">
+<span class="cert-img"><img src="assets/cert-aws-cp.jpg" alt="AWS Cloud Practitioner Essentials certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">AWS Cloud Practitioner Essentials</span>
+<span style="font-size: 14px; color: var(--muted);">AWS Training and Certification / 2024</span>
+</span>
+</button>
+
+<a href="https://explore.skillbuilder.aws/learn/course/134" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border: 1px solid var(--line2); border-radius: 8px; background: var(--bg); color: var(--ink);">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--accent-text);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7.5-7 9-4-1.5-7-5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>View course on AWS Skill Builder</span>
+<span class="mono" style="font-size: 11.5px; color: var(--muted); word-break: break-all;">AWS Skill Builder course 134</span>
+</a>
+
+</div>
+
+</div>
+</div>
+<div style="grid-column: span 1; display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--ink);"><span class="label" style="color: var(--ink);">Recognition</span><span class="mono" style="font-size: 12px; color: var(--muted);">01</span></div>
+<div style="display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 24px; flex-grow: 1;">
+
+<div class="" style="display: flex; flex-direction: column; gap: 10px;">
+<button type="button" class="cert" data-lb="certs:11" style="flex-grow: 1;" aria-label="View certificate: Guinness World Records event participant">
+<span class="cert-img"><img src="assets/cert-gwr.jpg" alt="Guinness World Records event participant certificate" style="display: block; width: 100%; aspect-ratio: 1600 / 1132; object-fit: cover; object-position: center 8%; border-radius: 4px;"></span>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 20px 4px 4px;">
+<span style="font-size: 18px; font-weight: 600; line-height: 1.3; color: var(--ink);">Guinness World Records event participant</span>
+<span style="font-size: 14px; color: var(--muted);">Kanz / Ministry of HRSD, Saudi Arabia / Jul 2026</span>
+</span>
+</button>
+
+<a href="https://try.ka.nz/certificate/KANZ-GWR-BD1970B01C?certificate_type=gwr2&amp;recipient_name=Khalid+Abdelrahman+Mustafa+Korena&amp;issue_date=July+15%2C+2026&amp;certificate_id=KANZ-GWR-BD1970B01C" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border: 1px solid var(--line2); border-radius: 8px; background: var(--bg); color: var(--ink);">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--accent-text);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7.5-7 9-4-1.5-7-5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>View certificate online</span>
+<span class="mono" style="font-size: 11.5px; color: var(--muted); word-break: break-all;">Most users in an AI video lesson (14,075). ID KANZ-GWR-BD1970B01C</span>
+</a>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="Education and languages" style="max-width: 1200px; margin: 0 auto; padding: 96px 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+<div class="card d3-left" style="padding: 40px; display: flex; gap: 28px; align-items: flex-start;">
+<div style="display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+<div class="label">Education</div>
+<div class="serif" style="font-size: 40px; line-height: 1.1;">National University, Sudan</div>
+<div style="font-size: 17px; font-weight: 500;">B.Sc. (Honours) in Information Technology</div>
+<div style="font-size: 16px; color: var(--muted);">Full time / Grade: Good / Awarded 28 April 2022</div>
+</div>
+<button type="button" class="cert" data-lb="certs:12" aria-label="View degree certificate" style="width: 132px; flex-shrink: 0; padding: 8px;">
+<span class="cert-img"><img src="assets/cert-degree.jpg" alt="Degree certificate" style="display: block; width: 100%; aspect-ratio: 1132 / 1600; object-fit: cover; border-radius: 3px;"></span>
+</button>
+</div>
+<div class="card d3-right" style="padding: 40px; display: flex; flex-direction: column; gap: 20px;">
+<div class="label">Languages</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 16px; border-bottom: 1px solid var(--line2);">
+<span class="serif" style="font-size: 40px; line-height: 1;">Arabic</span><span class="mono" style="font-size: 14px; color: var(--muted);">Native</span>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline;">
+<span class="serif" style="font-size: 40px; line-height: 1;">English</span><span class="mono" style="font-size: 14px; color: var(--muted);">B2 / Upper intermediate</span>
+</div>
+</div>
+</section>
+
+<section id="contact" style="background: var(--accent); color: #FFFFFF;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 120px 40px 96px; display: flex; flex-direction: column; gap: 56px;">
+<h2 class="serif d3-zoom" style="margin: 0; font-size: 104px; line-height: .95; letter-spacing: -0.02em; max-width: 900px;">Let's build something <span style="font-style: italic;">reliable.</span></h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,.4);">
+<a href="mailto:khalid.korena14@outlook.com" style="display: flex; flex-direction: column; gap: 8px; padding: 28px 24px 0 0; color: #FFFFFF;">
+<span class="label" style="color: rgba(255,255,255,.75);">Email</span><span style="font-size: 17px;">khalid.korena14@outlook.com</span>
+</a>
+<a href="tel:+249997193304" style="display: flex; flex-direction: column; gap: 8px; padding: 28px 24px 0; color: #FFFFFF;">
+<span class="label" style="color: rgba(255,255,255,.75);">Phone</span><span style="font-size: 17px;">+249 997 193 304</span>
+</a>
+<a href="https://linkedin.com/in/khalid-korena-544793246" style="display: flex; flex-direction: column; gap: 8px; padding: 28px 24px 0; color: #FFFFFF;">
+<span class="label" style="color: rgba(255,255,255,.75);">LinkedIn</span><span style="font-size: 17px;">in/khalid-korena</span>
+</a>
+<a href="https://github.com/khalidkorena15" style="display: flex; flex-direction: column; gap: 8px; padding: 28px 0 0 24px; color: #FFFFFF;">
+<span class="label" style="color: rgba(255,255,255,.75);">GitHub</span><span style="font-size: 17px;">khalidkorena15</span>
+</a>
+</div>
+</div>
+<div style="max-width: 1200px; margin: 0 auto; padding: 24px 40px 40px; display: flex; justify-content: space-between; font-size: 14px; color: rgba(255,255,255,.75); border-top: 1px solid rgba(255,255,255,.25);">
+<span>Khalid Abd Elrahman Mustafa Korena</span>
+<span>Cairo, Egypt</span>
+</div>
+</section>
+
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" style="position: fixed; inset: 0; z-index: 100; background: rgba(12,13,16,.9); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 32px; box-sizing: border-box;">
+<div class="lb-in" style="display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 100%;">
+<img src="" id="lb-img" alt="" style="display: block; max-width: min(1100px, 92vw); max-height: 74vh; width: auto; height: auto; border-radius: 6px; box-shadow: 0 40px 80px -30px rgba(0,0,0,.7);">
+<div style="display: flex; align-items: center; gap: 16px; color: #F3F1EC;">
+<button type="button" class="lb-btn" id="lb-prev" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 320px; text-align: center;">
+<span style="font-size: 18px; font-weight: 600;"><span id="lb-title"></span></span>
+<span style="font-size: 14px; color: #A3A7AE;"><span id="lb-meta"></span></span>
+
+<a href="#" id="lb-link" target="_blank" rel="noopener" style="font-size: 14px; color: #FFFFFF; text-decoration: underline; text-underline-offset: 3px;"><span id="lb-linktext"></span></a>
+</div>
+<button type="button" class="lb-btn" id="lb-next" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<button type="button" class="lb-btn" id="lb-close" aria-label="Close" style="position: absolute; top: 24px; right: 24px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</div>
+</div>
+<script>
+(function(){
+var DATA = {"certs": [{"title": "Microsoft Certified: Azure Administrator Associate", "img": "assets/cert-azure-associate.jpg", "issuer": "Microsoft", "date": "Nov 2024 / valid to Nov 2027", "verify": "Credential ID 284ED94E05518574", "verifyUrl": "https://learn.microsoft.com/api/credentials/share/en-us/KHALIDABDELRAHMANMUSTAFAKORENA-3726/284ED94E05518574?sharingId", "verifyLabel": "Verify on Microsoft Learn"}, {"title": "Azure Administrator (AZ-104) Official Course", "img": "assets/cert-az104.jpg", "issuer": "Microsoft Official Course / CLS", "date": "Jan 2024", "verify": "", "verifyUrl": "", "verifyLabel": ""}, {"title": "Microsoft Azure Fundamentals (AZ-900)", "img": "assets/cert-az900-ms.jpg", "issuer": "Microsoft Official Course / CLS", "date": "Jan 2024", "verify": "", "verifyUrl": "", "verifyLabel": ""}, {"title": "Azure Fundamentals and Azure Administrator", "img": "assets/cert-azure-cls.jpg", "issuer": "CLS Learning Solutions", "date": "Oct 2023 - Jan 2024", "verify": "", "verifyUrl": "", "verifyLabel": ""}, {"title": "Microsoft Azure AZ-900", "img": "assets/cert-az900-np.jpg", "issuer": "Network Plus Training Center", "date": "Oct 2022 / 30 hrs", "verify": "", "verifyUrl": "", "verifyLabel": ""}, {"title": "MCSE: Windows Server 2016", "img": "assets/cert-mcse.jpg", "issuer": "Network Plus Training Center", "date": "Sep 2022 / 60 hrs", "verify": "", "verifyUrl": "", "verifyLabel": ""}, {"title": "Cisco Certified Network Associate (CCNA)", "img": "assets/cert-ccna-cisco.jpg", "issuer": "Cisco", "date": "Oct 2022", "verify": "Verification No. ef387e55d02f4eb7884211ef007b6662", "verifyUrl": "https://www.cisco.com/go/verifycertificate", "verifyLabel": "Verify on Cisco"}, {"title": "CCNA 200-301 Training Course", "img": "assets/cert-ccna-np.jpg", "issuer": "Network Plus Training Center", "date": "Aug 2022 / 60 hrs", "verify": "", "verifyUrl": "", "verifyLabel": ""}, {"title": "Red Hat Linux Administration I and II", "img": "assets/cert-redhat.jpg", "issuer": "CLS Learning Solutions", "date": "May - Jun 2025", "verify": "", "verifyUrl": "", "verifyLabel": ""}, {"title": "Ultimate AWS Certified Solutions Architect Associate", "img": "assets/cert-aws-saa.jpg", "issuer": "Udemy / Stephane Maarek", "date": "Aug 2026 / 27 hrs", "verify": "UC-e05d26f5-d0eb-4a73-baa1-c3756cb4fffc", "verifyUrl": "https://www.udemy.com/certificate/UC-e05d26f5-d0eb-4a73-baa1-c3756cb4fffc/", "verifyLabel": "Verify on Udemy"}, {"title": "AWS Cloud Practitioner Essentials", "img": "assets/cert-aws-cp.jpg", "issuer": "AWS Training and Certification", "date": "2024", "verify": "AWS Skill Builder course 134", "verifyUrl": "https://explore.skillbuilder.aws/learn/course/134", "verifyLabel": "View course on AWS Skill Builder"}, {"title": "Guinness World Records event participant", "img": "assets/cert-gwr.jpg", "issuer": "Kanz / Ministry of HRSD, Saudi Arabia", "date": "Jul 2026", "verify": "Most users in an AI video lesson (14,075). ID KANZ-GWR-BD1970B01C", "verifyUrl": "https://try.ka.nz/certificate/KANZ-GWR-BD1970B01C?certificate_type=gwr2&recipient_name=Khalid+Abdelrahman+Mustafa+Korena&issue_date=July+15%2C+2026&certificate_id=KANZ-GWR-BD1970B01C", "verifyLabel": "View certificate online"}, {"title": "B.Sc. (Honours) in Information Technology", "img": "assets/cert-degree.jpg", "issuer": "National University, Sudan", "date": "Apr 2022", "verify": "", "verifyUrl": "", "verifyLabel": ""}], "proj": [{"title": "Bank Transaction Microservice", "img": "assets/arch-bank.jpg", "issuer": "Architecture diagram", "date": "AWS", "verify": "khalidkorena15/Bank-Transaction-Microservice-AWS", "verifyUrl": "https://github.com/khalidkorena15/Bank-Transaction-Microservice-AWS", "verifyLabel": "View repository on GitHub"}, {"title": "Multi-Cloud Application", "img": "assets/arch-multicloud.jpg", "issuer": "Architecture diagram", "date": "AWS + Azure", "verify": "khalidkorena15/multi-cloud-aws-azure", "verifyUrl": "https://github.com/khalidkorena15/multi-cloud-aws-azure", "verifyLabel": "View repository on GitHub"}, {"title": "ECS Fargate Nginx Deployment", "img": "assets/arch-ecs.jpg", "issuer": "Live service behind the load balancer", "date": "AWS", "verify": "khalidkorena15/aws-ecs-fargate-nginx-project", "verifyUrl": "https://github.com/khalidkorena15/aws-ecs-fargate-nginx-project", "verifyLabel": "View repository on GitHub"}, {"title": "Serverless Event Processing API", "img": "assets/arch-serverless.jpg", "issuer": "Architecture diagram", "date": "AWS", "verify": "khalidkorena15/serverless-event-processing-api", "verifyUrl": "https://github.com/khalidkorena15/serverless-event-processing-api", "verifyLabel": "View repository on GitHub"}, {"title": "Takween Assistant", "img": "assets/arch-takween.jpg", "issuer": "System architecture", "date": "PHP / MySQL / Claude API", "verify": "khalidkorena15/Takween-Assistant", "verifyUrl": "https://github.com/khalidkorena15/Takween-Assistant", "verifyLabel": "View repository on GitHub"}, {"title": "Virtualization and Infrastructure Deployment", "img": "assets/lab-ncomputing.jpg", "issuer": "NComputing VDI lab", "date": "City College, Khartoum", "verify": "", "verifyUrl": "", "verifyLabel": ""}, {"title": "Cloud Networking and Deployment", "img": "assets/lab-network.jpg", "issuer": "Azure lab: Network Watcher connection troubleshoot", "date": "AZ-104 labs", "verify": "", "verifyUrl": "", "verifyLabel": ""}, {"title": "Virtualization and Desktop Systems", "img": "assets/lab-bicep.jpg", "issuer": "Azure lab: managed disk deployed with Bicep", "date": "AZ-104 labs", "verify": "", "verifyUrl": "", "verifyLabel": ""}, {"title": "Azure Storage Management", "img": "assets/lab-storage.jpg", "issuer": "Azure Storage Explorer: blobs and file shares", "date": "AZ-104 labs", "verify": "", "verifyUrl": "", "verifyLabel": ""}], "web": [{"title": "Hero", "img": "assets/tk-hero.jpg", "issuer": "Takween United Publishing website", "date": "tkweeen.com", "verify": "khalidkorena15/takweeen-website", "verifyUrl": "https://github.com/khalidkorena15/takweeen-website", "verifyLabel": "View repository on GitHub"}, {"title": "Our story", "img": "assets/tk-story.jpg", "issuer": "Takween United Publishing website", "date": "tkweeen.com", "verify": "khalidkorena15/takweeen-website", "verifyUrl": "https://github.com/khalidkorena15/takweeen-website", "verifyLabel": "View repository on GitHub"}, {"title": "Services", "img": "assets/tk-services.jpg", "issuer": "Takween United Publishing website", "date": "tkweeen.com", "verify": "khalidkorena15/takweeen-website", "verifyUrl": "https://github.com/khalidkorena15/takweeen-website", "verifyLabel": "View repository on GitHub"}, {"title": "App promo", "img": "assets/tk-app.jpg", "issuer": "Takween United Publishing website", "date": "tkweeen.com", "verify": "khalidkorena15/takweeen-website", "verifyUrl": "https://github.com/khalidkorena15/takweeen-website", "verifyLabel": "View repository on GitHub"}, {"title": "Stats", "img": "assets/tk-stats.jpg", "issuer": "Takween United Publishing website", "date": "tkweeen.com", "verify": "khalidkorena15/takweeen-website", "verifyUrl": "https://github.com/khalidkorena15/takweeen-website", "verifyLabel": "View repository on GitHub"}, {"title": "Testimonials", "img": "assets/tk-testimonials.jpg", "issuer": "Takween United Publishing website", "date": "tkweeen.com", "verify": "khalidkorena15/takweeen-website", "verifyUrl": "https://github.com/khalidkorena15/takweeen-website", "verifyLabel": "View repository on GitHub"}, {"title": "Contact and footer", "img": "assets/tk-contact.jpg", "issuer": "Takween United Publishing website", "date": "tkweeen.com", "verify": "khalidkorena15/takweeen-website", "verifyUrl": "https://github.com/khalidkorena15/takweeen-website", "verifyLabel": "View repository on GitHub"}], "pharma": [{"title": "Landing page (dark)", "img": "assets/pl-landing-dark.jpg", "issuer": "PharmaLink B2B platform", "date": "pharmalink-sd.com", "verify": "khalidkorena15/pharmalink-overview", "verifyUrl": "https://github.com/khalidkorena15/pharmalink-overview", "verifyLabel": "Read the overview on GitHub"}, {"title": "Landing page (light)", "img": "assets/pl-landing-light.jpg", "issuer": "PharmaLink B2B platform", "date": "pharmalink-sd.com", "verify": "khalidkorena15/pharmalink-overview", "verifyUrl": "https://github.com/khalidkorena15/pharmalink-overview", "verifyLabel": "Read the overview on GitHub"}, {"title": "Services", "img": "assets/pl-services.jpg", "issuer": "PharmaLink B2B platform", "date": "pharmalink-sd.com", "verify": "khalidkorena15/pharmalink-overview", "verifyUrl": "https://github.com/khalidkorena15/pharmalink-overview", "verifyLabel": "Read the overview on GitHub"}, {"title": "Registration", "img": "assets/pl-registration.jpg", "issuer": "PharmaLink B2B platform", "date": "pharmalink-sd.com", "verify": "khalidkorena15/pharmalink-overview", "verifyUrl": "https://github.com/khalidkorena15/pharmalink-overview", "verifyLabel": "Read the overview on GitHub"}, {"title": "Email confirmation", "img": "assets/pl-email-code.jpg", "issuer": "PharmaLink B2B platform", "date": "pharmalink-sd.com", "verify": "khalidkorena15/pharmalink-overview", "verifyUrl": "https://github.com/khalidkorena15/pharmalink-overview", "verifyLabel": "Read the overview on GitHub"}, {"title": "Account activated", "img": "assets/pl-activated.jpg", "issuer": "PharmaLink B2B platform", "date": "pharmalink-sd.com", "verify": "khalidkorena15/pharmalink-overview", "verifyUrl": "https://github.com/khalidkorena15/pharmalink-overview", "verifyLabel": "Read the overview on GitHub"}]};
+var root = document.getElementById('root');
+try { var t = localStorage.getItem('theme'); if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; } setTheme(t); } catch (e) {}
+function setTheme(t){ root.className = 'theme-root theme-' + t; try { localStorage.setItem('theme', t); } catch (e) {} }
+document.getElementById('theme-toggle').addEventListener('click', function(){
+  setTheme(root.classList.contains('theme-dark') ? 'light' : 'dark');
+});
+var box = document.getElementById('lightbox'), im = document.getElementById('lb-img');
+var cur = { set: 'certs', i: 0 };
+function show(){
+  var it = DATA[cur.set][cur.i];
+  im.src = it.img; im.alt = it.title;
+  document.getElementById('lb-title').textContent = it.title;
+  document.getElementById('lb-meta').textContent = it.issuer + (it.date ? ' / ' + it.date : '');
+  var link = document.getElementById('lb-link');
+  if (it.verifyUrl) { link.style.display = ''; link.href = it.verifyUrl; document.getElementById('lb-linktext').textContent = it.verifyLabel + ' (' + it.verify + ')'; }
+  else { link.style.display = 'none'; }
+  box.classList.add('lb-open');
+  document.body.style.overflow = 'hidden';
+}
+function close(){ box.classList.remove('lb-open'); document.body.style.overflow = ''; }
+function step(d){ var n = DATA[cur.set].length; cur.i = (cur.i + d + n) % n; show(); }
+document.querySelectorAll('[data-lb]').forEach(function(el){
+  el.addEventListener('click', function(){
+    var p = el.getAttribute('data-lb').split(':');
+    cur = { set: p[0], i: parseInt(p[1], 10) }; show();
+  });
+});
+document.getElementById('lb-prev').addEventListener('click', function(e){ e.stopPropagation(); step(-1); });
+document.getElementById('lb-next').addEventListener('click', function(e){ e.stopPropagation(); step(1); });
+document.getElementById('lb-close').addEventListener('click', close);
+box.addEventListener('click', function(e){ if (e.target === box) close(); });
+document.addEventListener('keydown', function(e){
+  if (!box.classList.contains('lb-open')) return;
+  if (e.key === 'Escape') close();
+  if (e.key === 'ArrowRight') step(1);
+  if (e.key === 'ArrowLeft') step(-1);
+});
+})();
+</script>
+</body>
+</html>
